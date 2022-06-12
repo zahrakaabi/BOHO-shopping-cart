@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commetce</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/typography.css">
+    <link rel="stylesheet" href="../css/landing-page.css">
+    <link rel="stylesheet" href="../css/shopping-cart.css">
+    <link rel="stylesheet" href="../css/see-more-button.css">
+</head>
+<body>
+    <!--=======================header=========================--->
+    <header>
+        <div class="navbar desktop-navbar bg-section flex justify-center items-center">
+            <ul class="menu flex">
+                <li><a href="../index.html">home</a></li>
+                <li><a href="./catalog.html">bouqets</a></li>
+                <li><a href="#">decoration</a></li>
+                <li><a href="#">gifts</a></li>
+                <li><a href="#">contacts</a></li>
+            </ul>
+
+            <ul class="side-shopping-menu">
+                <li><img src="../assets/images/bx-heart.svg" alt="heart" /></li>
+                <li><img src="../assets/images/bx-user.svg" alt="user" /></li>
+                <li><img src="../assets/images/bx-shopping-bag.svg" alt="shopping-bag" /></li>
+            </ul>
+        </div>
+
+        <div class="navbar mobile-navbar bg-section flex justify-between items-center">
+            <img class="shopping-bag" src="./assets/images/bx-shopping-bag.svg" alt="shopping-bag" />
+            <h1 class="logo">boho</h1>
+            <div class="menu-icon">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </header>
+    <!--=====================End header========================-->
+    
+    <main>
+    <!--====================shopping-cart=====================--->
+    <div class="container shopping-cart bg-section">
+        <table class="w-max">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="shopping-cart__content"></tbody>
+        </table>
+    </div>
+    <!--==================End shopping-cart====================-->
+    </main>
+
+    <footer>
+    <!--========================footer========================--->
+    <div class="container footer">
+        <div class="footer-row flex flex-wrap justify-between">
+            <div class="footer-col footer-logo">
+                <h2>BOHO</h2>
+                <h6>Studio</h6>
+            </div>
+    
+            <div class="footer-col flex justify-between pos-r">
+                <div class="footer-col__part-one">
+                    <h2 class="footer-title">CONTACTS</h2>
+    
+                    <ul class="footer-usefull-links">
+                        <li><a href="#">+7 (999) 999 99 99</a></li>
+                        <li><a href="#">boho@gmail.com</a></li>
+                        <li><a href="#">avenue habib bourguiba</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-col__part-two">
+                    <h2 class="footer-title">MENU</h2>
+                    
+                    <ul class="footer-usefull-links">
+                        <li><a href="#">bouquets</a></li>
+                        <li><a href="#">decoration</a></li>
+                        <li><a href="#">gifts</a></li>
+                        <li><a href="#">promotions</a></li>
+                        <li><a href="#">delivery and payement</a></li>
+                        <li><a href="#">feedback</a></li>
+                        <li><a href="#">about us</a></li>
+                    </ul>
+                </div>
+                
+                <ul class="social-media flex">
+                    <li><a href="#"><img src="../assets/images/social-media/youtube.png" alt="youtube_icon" /></a></li>
+                    <li><a href="#"><img src="../assets/images/social-media/instagram.png" alt="instgaram_icon" /></a></li>
+                    <li><a href="#"><img src="../assets/images/social-media/telegram.png" alt="telegram_icon" /></a></li>
+                    <li><a href="#"><img src="../assets/images/social-media/google.png" alt="google_icon" /></a></li>
+                </ul>
+            </div>
+        </div>
+        <span>2022 developed by Zahra Kaabi</span>
+    </div> 
+    <!--=======================End footer======================-->
+    </footer>
+
+    <!-------Javascript------------------------------------------>
+    <script src="../js/shopping-cart.js"></script>
+</body>
+</html>

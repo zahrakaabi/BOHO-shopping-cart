@@ -1,0 +1,113 @@
+.side-title {
+    top: 50%;
+    left: -1rem;
+    z-index: 10;
+    position: fixed;
+    font-weight: 300;
+    font-size: 2.5rem;
+    letter-spacing: 12px;
+    color: var(--base-color);
+    font-family: var(--ff-monospace);
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+.page-title h1,
+.page-title h6 {
+    line-height: 1;
+    font-weight: 300;
+    color: var(--base-color);
+    font-family: var(--ff-monospace);
+}
+
+.page-title h1 {
+    font-size: 2.8rem;
+    padding-top: 1rem;
+}
+
+.page-title h6 {
+    font-size: 1rem;
+}
+
+.products {
+    margin-top: 60px;
+    padding-bottom: 60px;
+}
+
+.single-product {
+    height: 100%;
+    position: relative;
+    padding-left: 25px;
+    padding-bottom: 40px;
+    width: calc((100% / 3));
+}
+
+.single-product img {
+    width: 100%;
+    height: 500px;
+}
+
+.product-info h4 {
+    font-weight: 400;
+    color: var(--base-color);
+    font-family: var(--ff-monospace);
+}
+
+.product-info .product-name {
+    font-size: 2rem;
+}
+
+.product-info .product-price {
+    font-size: 2.5rem;
+}
+
+.add-to-favorite {
+    top: 0;
+    right: 0;
+    z-index: 55;
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    background-color: var(--second-color);
+}
+
+.add-to-favorite img {
+    width: 25px;
+    height: 25px;
+    filter: invert(1);
+}
+
+.add-to-cart-hover {
+    top: 0;
+    right: 0;
+    opacity: 0;
+    height: 500px;
+    position: absolute;
+    transition: 0.4s ease;
+    width: calc(100% - 25px);
+    background-color: #ffffffa8;
+}
+
+.add-to-cart-hover button {
+    width: 200px;
+    height: 40px;
+    cursor: pointer;
+    border: 2px solid var(--second-color);
+}
+
+.add-to-cart-hover .view-button {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--second-color);
+    background-color: transparent;
+}
+
+.add-to-cart-hover .add-to-cart-button {
+    color: #ffffff;
+    background-color: var(--second-color);
+}
+
+.single-product:hover > .add-to-cart-hover {
+    opacity: 1;
+}

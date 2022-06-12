@@ -1,0 +1,13 @@
+/*===========================
+    css variables
+=============================*/
+:root {
+    /*--colors--*/
+    --main-bg-color: #2a2f2b;
+    --base-color: #cfc5bb;
+    --second-color: #ae7d74;
+    
+    /*--fonts--*/
+    --ff-monospace: Cormorant;
+    --ff-light-sans-serif: Montserrat-light;
+  }

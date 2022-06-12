@@ -1,0 +1,47 @@
+.see-more-container {
+    right: 70px;
+    bottom: -90px;
+    z-index: 5;
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+}
+
+.see-more-button {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    border-radius: 50%;
+    border: 1px solid var(--base-color);
+}
+
+.see-more-content {
+    top: 50%;
+    left: 80%;
+    width: 100%;
+    position: absolute;
+    transform: translate(-20%, -50%);
+}
+
+.see-more-button h6 {
+    line-height: 1.2;
+    font-weight: 300;
+    color: #9d968f;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    font-family: var(--ff-monospace);
+}
+
+.see-more-button .see-more-arrow {
+    width: 20px;
+    filter: invert(1);
+}
+
+/*=========================
+       media queries
+==========================*/
+@media (max-width: 992px) {
+    .see-more-button {
+        bottom: -50px !important;        
+    }
+}

@@ -1,0 +1,283 @@
+/*=====================================
+                Navbar
+=====================================*/
+.navbar {
+    top: 0;
+    left: 0;
+    z-index: 999;
+    position: sticky;
+}
+
+/* desktop navbar view */
+.desktop-navbar {
+    padding: 25px 0;
+}
+
+.desktop-navbar .menu{
+    padding: 0 40px 15px 40px;
+    border-bottom: 0.5px solid #cfc5bbaf;
+}
+
+.desktop-navbar .menu li a{
+    font-size: 1rem;
+    margin-right: 1rem;
+    color: var(--base-color);
+}
+
+.desktop-navbar .menu li:last-of-type a{
+    margin-right: 0;
+}
+
+.desktop-navbar .side-shopping-menu {
+    position: absolute;
+    z-index: 900;
+    right: 15px;
+    top: 20px;
+}
+
+.desktop-navbar .side-shopping-menu li img {
+    width: 20px;
+    cursor: pointer;
+    filter: invert(1);
+}
+
+.side-shopping-menu li .heart-icon,
+.side-shopping-menu li .cart-icon {
+    position: relative;
+}
+
+.side-shopping-menu li .heart-icon,
+.side-shopping-menu li .cart-icon {
+    width: 15px;
+    height: 15px;
+    display: flex;
+    line-height: 1;
+    color: #ffffff;
+    font-size: 0.5rem;
+    border-radius: 50%;
+    position: absolute;
+    transition: 0.4s ease;
+    background-color: var(--second-color);
+    font-family: var(--ff-light-sans-serif);
+}
+
+.side-shopping-menu li .heart-icon {
+    top: -7px;
+    right: -7px;
+}
+
+.side-shopping-menu li .cart-icon {
+    bottom: 15px;
+    right: -7px;
+}
+
+/* mobile navbar view */
+.mobile-navbar {
+    padding: 15px;
+}
+
+.mobile-navbar .shopping-bag {
+    width: 35px;
+    filter: invert(1);
+}
+
+.mobile-navbar .logo {
+    font-weight: 300;
+    font-size: 2.3rem;
+    color: var(--base-color);
+    font-family: var(--ff-monospace);
+}
+
+.mobile-navbar .menu-icon {
+    width: 50px;
+    padding: 5px;
+}
+
+.mobile-navbar .menu-icon div {
+    height: 3px;
+    width: 100%;
+    border: 5px;
+    background: var(--base-color);
+    margin-bottom: 7px;
+    transition: 0.5s ease;
+}
+
+.mobile-navbar .menu-icon div:nth-child(2) {
+    transition: 0.3s ease;
+}
+
+.mobile-navbar .menu-icon:hover > div:first-child {
+    margin-bottom: 0;
+    transform: rotate(45deg);
+}
+
+.mobile-navbar .menu-icon:hover > div:nth-child(2) {
+    margin-bottom: 0;
+    opacity: 0;
+}
+
+.mobile-navbar .menu-icon:hover > div:nth-child(3) {
+    margin-bottom: 0;
+    margin-top: -0.3rem;
+    transform: rotate(-45deg);
+}
+
+/*=====================================
+           banner section
+=====================================*/
+.banner {
+    height: 90vh;
+    position: relative;
+}
+
+.banner img {
+    height: 30vh;
+}
+
+.banner .banner__content h1,
+.banner .banner__content h2 {
+    line-height: 1;
+    font-weight: 300;
+    color: var(--base-color);
+    font-family: var(--ff-monospace);
+}
+
+.banner .banner__content h1 {
+    font-size: 20vw;
+}
+
+.banner .banner__content h2 {
+    font-size: 10vw;
+}
+
+/*=====================================
+          bouquets section
+=====================================*/
+.bouquets {
+    height: 550px;
+    position: relative;
+}
+
+.bouquets-flowers {
+    top: 0;
+    left: 100px;
+    position: absolute;
+    width: 400px;
+    height: 550px;
+}
+
+.bouquets h2 {
+    margin-left: 3rem;
+}
+
+/*=====================================
+          decoration section
+=====================================*/
+.decoration {
+    position: relative;
+}
+
+/*=====================================
+          gifts section
+=====================================*/
+.gifts {
+    padding-bottom: 200px;
+}
+
+.gifts,
+.gifts-content {
+    position: relative;
+}
+
+.gifts-slogan {
+    margin-left: 100px;
+}
+
+.gifts-content {
+    width: 60%;
+}
+
+.gifts-images {
+    width: 40%;
+}
+
+.gifts-images .gallery {
+    height: 500px;
+    width: 80%;
+
+    overflow: auto;
+}
+
+.gifts-images .gallery img {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+
+    object-fit: cover;
+
+    position: sticky;
+    top: 0;
+}
+
+/*=========================
+  animations (keyframes)
+=========================*/
+
+/*=========================
+       media queries
+==========================*/
+@media (max-width: 992px) {
+    /*----navbar---*/
+    .desktop-navbar,
+    .side-shopping-menu {
+        display: none;
+    }
+
+    /*---banner---*/
+    .banner {
+        height: 80vh;
+        padding: 1rem;
+        justify-content: flex-start;
+    }
+
+    .banner img {
+        height: 50vh;
+        width: 80%;
+    }
+
+    .banner__content {
+        top: -2rem;
+        left: 0;
+        transform: unset;
+        position: relative;
+    }
+
+    /*---bouquets---*/
+    .bouquets {
+        height: 100%;
+        flex-direction: column-reverse;
+    }
+
+    .bouquets h2 {
+        display: none;
+    }
+
+    .bouquets-flowers {
+        left: 0;
+        width: 80%;
+        height: 80%;
+        position: relative;
+    }
+
+    /*---gifts---*/
+    .gifts-content,
+    .gifts-images {
+        width: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    .mobile-navbar {
+        display: none;
+    }
+}
