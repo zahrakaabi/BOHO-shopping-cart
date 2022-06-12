@@ -1,6 +1,6 @@
 .shopping-cart {
     margin: 0 auto;
-    min-height: 100vh;
+    min-height: 70vh;
 }
 
 .shopping-cart table {
@@ -58,4 +58,34 @@
     width: 120px;
     height: 150px;
     margin: 0.5rem 3.5rem 0.5rem 2rem;
+}
+
+.sub-total-conainer {
+    padding: 0 10rem;
+    float: right;
+}
+
+.sub-total-conainer h3 {
+    font-weight: 400;
+    text-align: left;
+    font-size: 2rem;
+    color: var(--base-color);
+    font-family: var(--ff-monospace);
+}
+
+.sub-total-conainer h3:first-child {
+    margin-right: 3rem;
+}
+
+.sub-total-conainer button {
+    width: 100%;
+    height: 60px;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.6rem;
+    margin-top: 2rem;
+    font-family: var(--ff-monospace);
+    background-color: #ad7d73;
 }
