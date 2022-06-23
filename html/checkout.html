@@ -8,6 +8,8 @@
     <!--CSS-->
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/checkout.css">
+    <link rel="stylesheet" href="../css/catalog.css">
     <link rel="stylesheet" href="../css/variables.css">
     <link rel="stylesheet" href="../css/typography.css">
     <link rel="stylesheet" href="../css/landing-page.css">
@@ -45,30 +47,45 @@
     </header>
     <!--=====================End header========================-->
     
-    <main>
-    <!--====================shopping-cart=====================--->
-    <div class="container shopping-cart bg-section">
-        <table class="w-max">
-            <thead>
-                <tr>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody id="shopping-cart__content"></tbody>
-        </table>
-
-        <div class="sub-total-conainer">
-            <div class="flex">
-                <h3>Subtotal</h3>
-                <h3 id="subtotal"></h3>
-            </div>
-            <a href="./checkout.html"><button class="text-center">Checkout</button></a>
-        </div>
+    <main class="bg-section">
+    <!--=====================page title=======================--->
+    <div class="page-title text-center">
+        <h1>CHECKOUT</h1>
+        <h6>&#9830; shopping cart</h6>
     </div>
-    <!--==================End shopping-cart====================-->
+    <!--====================End page title=====================-->
+
+    <!--====================checkout=====================--->
+    <div class="container checkout-container bg-section">
+        <form>
+            <h2 class="section-title text-center">YOU</h2>
+
+            <input id="name" type="text" placeholder="Name" required />
+            <input id="phone-number" type="number" placeholder="Phone number" required />
+            <input id="email" type="email" placeholder="E-mail" required />
+            
+            <h2 class="section-title text-center">Details</h2>
+
+            <input id="adress" type="text" placeholder="Adress" required />
+            <input id="postal-code" type="number" placeholder="Postal-code" required />
+
+            <h2 class="section-title text-center">ORDER</h2>
+
+            <div id="checkout-infos"></div>
+            <div class="flex justify-between">
+                <h3 class="checkout-content">Delivery within Tunisia</h3>
+                <h3 class="checkout-content">$7,00</h3>
+            </div>
+            <div class="checkout-total flex justify-between">
+                <h3>Total</h3>
+                <h3 id="checkout-total" class="text-center"></h3>
+            </div>  
+ 
+            <button id="download">GENERATE PDF</button>
+        </form>
+    </div>
+
+    <!--==================End checkout====================-->
     </main>
 
     <footer>
@@ -79,18 +96,18 @@
                 <h2>BOHO</h2>
                 <h6>Studio</h6>
             </div>
-    
+
             <div class="footer-col flex justify-between pos-r">
                 <div class="footer-col__part-one">
                     <h2 class="footer-title">CONTACTS</h2>
-    
+
                     <ul class="footer-usefull-links">
                         <li><a href="#">+7 (999) 999 99 99</a></li>
                         <li><a href="#">boho@gmail.com</a></li>
                         <li><a href="#">avenue habib bourguiba</a></li>
                     </ul>
                 </div>
-    
+
                 <div class="footer-col__part-two">
                     <h2 class="footer-title">MENU</h2>
                     
@@ -118,7 +135,8 @@
     <!--=======================End footer======================-->
     </footer>
 
-    <!-------Javascript------------------------------------------>
-    <script src="../js/shopping-cart.js"></script>
+<!-------Javascript------------------------------------------>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="../js/checkout.js"></script>
 </body>
 </html>

@@ -1,0 +1,84 @@
+.checkout-container {
+    margin: 0 auto;
+    min-height: 100vh;
+    padding-bottom: 8rem;
+}
+
+.section-title {
+    font-weight: 400;
+    margin: 4rem 0;
+    font-size: 2rem;
+    color: var(--base-color);
+    font-family: var(--ff-monospace);
+}
+
+.checkout-total h3:first-of-type {
+    font-weight: 600;
+    font-size: 3rem;
+    color: var(--base-color);
+    font-family: var(--ff-monospace);
+}
+
+.checkout-container form input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px 2px;
+    margin-bottom: 1rem;
+    color: var(--base-color);
+    background-color: transparent;
+    border-bottom: 1px solid var(--base-color);
+}
+
+.checkout-container form button {
+    width: 100%;
+    height: 60px;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.6rem;
+    margin-top: 2rem;
+    font-family: var(--ff-monospace);
+    background-color: #ad7d73;
+}
+
+.checkout-content {
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--base-color);
+    font-family: var(--ff-monospace);
+    margin-bottom: 1rem;
+}
+
+.checkout-content span {
+    margin-left: 5rem;
+}
+
+.checkout-total #checkout-total {
+    width: 200px;
+    height: 50px;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--base-color);
+    font-family: var(--ff-monospace);
+    border: 1px solid var(--base-color);
+}
+
+.pdf-file {
+    display: none;
+    padding: 0 8rem 2rem 8rem;
+    background-color: #fff;
+}
+
+.pdf-content {
+  font-size: 2rem;
+}
+
+.pdf-file h3 {
+    color: var(--main-bg-color) !important;
+}
+
+.pdf-file #checkout-total {
+    border: 3px solid var(--main-bg-color);
+}

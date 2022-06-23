@@ -107,6 +107,9 @@ function Subtotal() {
         subTotal += GET_TOTAL;
     }
     SUBTOTAL_CONTAINER.innerHTML = `$${subTotal}`;
+    const STRINGIFIED_SUBTOTAL = JSON.stringify(subTotal);
+    localStorage.setItem('subTotal', STRINGIFIED_SUBTOTAL);
+
     return '';
 }
 
