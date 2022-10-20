@@ -118,8 +118,6 @@ function AddToFavorite() {
     return '';
 }
 
-
-
 /* ---- Add to cart onclick ---- */
 function ManageCart() {
     const ADD_TO_CART_BUTTONS_ARRAY = document.querySelectorAll('.add-to-cart-button');
@@ -132,7 +130,7 @@ function ManageCart() {
 }
 
 /* ---- Check cart after loading ---- */
-// save the number of added to bag products 
+// save the number of added products to the bag
 // even after loading page 
 function OnloadPage() {
     let QUANTITY_CART_ITEMS = localStorage.getItem("qty_cartItems");

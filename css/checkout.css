@@ -39,6 +39,7 @@
     font-weight: 400;
     font-size: 1.6rem;
     margin-top: 2rem;
+    cursor: pointer;
     font-family: var(--ff-monospace);
     background-color: #ad7d73;
 }
