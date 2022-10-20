@@ -1,6 +1,7 @@
 .shopping-cart {
     margin: 0 auto;
     min-height: 100vh;
+    padding-bottom: 4rem;
 }
 
 .shopping-cart table {
@@ -61,8 +62,7 @@
 }
 
 .sub-total-conainer {
-    padding: 0 10rem;
-    float: right;
+    padding: 0 4rem;
 }
 
 .sub-total-conainer h3 {
@@ -78,7 +78,7 @@
 }
 
 .sub-total-conainer button {
-    width: 100%;
+    width: 150px;
     height: 60px;
     outline: none;
     border: none;
