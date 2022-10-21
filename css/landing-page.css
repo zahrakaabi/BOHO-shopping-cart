@@ -132,6 +132,8 @@
 
 .banner img {
     height: 30vh;
+    width: 100%;
+    object-fit: cover;
 }
 
 .banner .banner__content h1,
@@ -175,6 +177,10 @@
 =====================================*/
 .decoration {
     position: relative;
+}
+
+.decoration img {
+    object-fit: cover;
 }
 
 /*=====================================

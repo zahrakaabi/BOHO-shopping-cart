@@ -104,7 +104,9 @@ function Products() {
     const items =  PRODUCTS_ARRAY?.map((product) => {
         products_list.innerHTML +=
             `<div class="single-product">
-                <button class="add-to-favorite" onclick="AddToFavorite()"><img src="../assets/images/icons/white-heart.svg" alt="white-heart" /></button>
+                <button class="add-to-favorite">
+                    <img src="../assets/images/icons/white-heart.svg" alt="white-heart" />
+                </button>
                 <img class="product-img" src=${product.image} alt=${product.name} />
                 <div class="product-info flex justify-between">
                     <h4 class="product-name"> ${product.name} </h4>
@@ -113,7 +115,7 @@ function Products() {
                 <div class="add-to-cart-hover flex flex-column justify-center items-center">
                     <a href="../html/product-details.html"
                        class="view-product-details">
-                        <button>VIEW</button>
+                        <button class="view-button">VIEW</button>
                     </a>
                     <button class="add-to-cart-button">ADD TO CART</button>
                 </div>
@@ -124,18 +126,58 @@ function Products() {
     return items;
 }
 
-/* ---- Add to favorites ---- */
-// @TO DO : check if its clicked disable the button
-// add to favorite is allowed only once
-function AddToFavorite() {
-    const FAVORITE_NUMBER_CONTAINER = document.getElementById("favorite-number-container");
-    favorites_number += 1;
-    if (favorites_number >= 1) {
+/* ---- check favorite bag after loading ---- */
+// save the number of added products to the favorites
+// even after loading page 
+function OnloadPageFavorites() {
+    let QUANTITY_FAVORITE_ITEMS = localStorage.getItem("favorites");
+    const FAVORITE_NUMBER_CONTAINER = document.getElementById('favorite-number-container');
+
+    if (QUANTITY_FAVORITE_ITEMS) {
         FAVORITE_NUMBER_CONTAINER.classList.add("heart-icon");
-    } else {
-        FAVORITE_NUMBER_CONTAINER.classList.add("remove-element");
+        FAVORITE_NUMBER_CONTAINER.innerHTML = QUANTITY_FAVORITE_ITEMS;
     }
-    FAVORITE_NUMBER_CONTAINER.innerHTML = favorites_number;
+    return '';
+}
+
+/* ---- Add to favorites ---- */
+function AddToFavorite() {
+    const ADD_TO_FAVORITE_BUTTONS = document.querySelectorAll('.add-to-favorite');
+    const FAVORITES_ARRAY = localStorage.getItem('favorites-array');
+    let PARSED_FAVORITES_ARRAY = JSON.parse(FAVORITES_ARRAY);
+    
+    for (let i = 0; i<PRODUCTS_ARRAY.length; i++) {
+        ADD_TO_FAVORITE_BUTTONS[i].addEventListener("click", function() {
+            
+            if (!PARSED_FAVORITES_ARRAY) {
+                PARSED_FAVORITES_ARRAY = [];
+            }
+
+            // Check if the product is laready exist in the array
+            if (PARSED_FAVORITES_ARRAY.includes(PRODUCTS_ARRAY[i])) {
+                alert("Hello Dear USER\n This product is already added to your favorite list <3");
+            }
+            
+            PARSED_FAVORITES_ARRAY.push(PRODUCTS_ARRAY[i]);
+
+            // DELETE DUPLICATED FAVORITE ITEMS
+            let DELETE_DUPLICATED_FAVORITE_ITEMS = [...new Set(PARSED_FAVORITES_ARRAY)];
+
+            // save favorite items into localStorage
+            const STRINGIFIED_DELETE_DUPLICATED_FAVORITE_ITEMS = JSON.stringify(DELETE_DUPLICATED_FAVORITE_ITEMS);
+            localStorage.setItem('favorites-array', STRINGIFIED_DELETE_DUPLICATED_FAVORITE_ITEMS);
+
+            // Favorites number
+            const FAVORITES_NUMBER = DELETE_DUPLICATED_FAVORITE_ITEMS.length;
+            const STRINGIFIED_FAVORITES_NUMBER = JSON.stringify(FAVORITES_NUMBER);
+            localStorage.setItem('favorites', STRINGIFIED_FAVORITES_NUMBER);
+
+            // SHOW Favorites (style)
+            const FAVORITE_NUMBER_CONTAINER = document.getElementById('favorite-number-container');
+            FAVORITE_NUMBER_CONTAINER.innerHTML = FAVORITES_NUMBER;
+            FAVORITE_NUMBER_CONTAINER.classList.add("heart-icon");
+        })
+    }
     return '';
 }
 
@@ -183,7 +225,7 @@ function AddToCart(productDetails) {
     CART_NUMBER_CONTAINER.classList.add("cart-icon");
 
     const QUANTITY_CART_ITEMS = localStorage.getItem("qty_cartItems");
-    PARSED_QUANTITY_CART_ITEMS = parseInt(QUANTITY_CART_ITEMS);
+    const PARSED_QUANTITY_CART_ITEMS = parseInt(QUANTITY_CART_ITEMS);
 
     if (PARSED_QUANTITY_CART_ITEMS) {
         localStorage.setItem("qty_cartItems", PARSED_QUANTITY_CART_ITEMS + 1);
@@ -216,3 +258,5 @@ Products();
 SetProductDetailsLocalStorage();
 OnloadPage();
 ManageCart();
+AddToFavorite();
+OnloadPageFavorites();

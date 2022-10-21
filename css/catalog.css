@@ -103,6 +103,10 @@
     background-color: transparent;
 }
 
+.add-to-cart-hover .view-button:hover {
+    background-color: #fff;
+}
+
 .add-to-cart-hover .add-to-cart-button {
     color: #ffffff;
     background-color: var(--second-color);
