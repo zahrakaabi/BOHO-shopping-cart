@@ -6,6 +6,8 @@ const PRODUCTS_ARRAY = [
         id: 0,
         image: "https://images.unsplash.com/photo-1591056076251-514f3c9368a4?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435",
         name: "bouquet 01",
+        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting",
+        details: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
         price: 45,
         inCart: 0,
     },
@@ -14,6 +16,8 @@ const PRODUCTS_ARRAY = [
         image: "https://images.unsplash.com/photo-1557925923-6885735abfb1?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388",
         name: "bouquet 02",
         price: 49,
+        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting",
+        details: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
         inCart: 0,
     },
     {
@@ -21,6 +25,8 @@ const PRODUCTS_ARRAY = [
         image: "https://images.unsplash.com/photo-1556269975-7cc2cbc82480?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387",
         name: "bouquet 03",
         price: 35,
+        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting",
+        details: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
         inCart: 0,
     },
     {
@@ -28,6 +34,8 @@ const PRODUCTS_ARRAY = [
         image: "https://images.unsplash.com/photo-1521543832500-49e69fb2bea2?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387",
         name: "bouquet 04",
         price: 75,
+        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting",
+        details: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
         inCart: 0,
     },
     {
@@ -35,6 +43,8 @@ const PRODUCTS_ARRAY = [
         image: "https://images.unsplash.com/photo-1557925923-6885735abfb1?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388",
         name: "bouquet 05",
         price: 80,
+        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting",
+        details: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
         inCart: 0,
     },
     {
@@ -42,6 +52,8 @@ const PRODUCTS_ARRAY = [
         image: "https://images.unsplash.com/photo-1539346254710-b6d86e095035?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435",
         name: "bouquet 06",
         price: 63,
+        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting",
+        details: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
         inCart: 0,
     },
     {
@@ -49,6 +61,8 @@ const PRODUCTS_ARRAY = [
         image: "https://images.unsplash.com/photo-1539073602199-a078932952bd?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435",
         name: "bouquet 07",
         price: 45,
+        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting",
+        details: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
         inCart: 0,
     },
     {
@@ -56,6 +70,8 @@ const PRODUCTS_ARRAY = [
         image: "https://images.unsplash.com/photo-1541792529698-03020b773b3b?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435",
         name: "bouquet 08",
         price: 72,
+        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting",
+        details: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
         inCart: 0,
     },
     {
@@ -63,6 +79,8 @@ const PRODUCTS_ARRAY = [
         image: "https://images.unsplash.com/photo-1592309487290-2cf1e17b4623?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387",
         name: "bouquet 09",
         price: 35,
+        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting",
+        details: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
         inCart: 0,
     },
 ]
@@ -93,7 +111,10 @@ function Products() {
                     <h4 class="product-price"> $${product.price} </h4>
                 </div>
                 <div class="add-to-cart-hover flex flex-column justify-center items-center">
-                    <button class="view-button">VIEW</button>
+                    <a href="../html/product-details.html"
+                       class="view-product-details">
+                        <button>VIEW</button>
+                    </a>
                     <button class="add-to-cart-button">ADD TO CART</button>
                 </div>
             </div>`
@@ -118,12 +139,27 @@ function AddToFavorite() {
     return '';
 }
 
+/* ---- save product details to localStorage onclick ---- */
+function SetProductDetailsLocalStorage() {
+    const PRODUCT_DETAILS_BUTTONS_ARRAY = document.querySelectorAll('.view-product-details');
+        for(let i = 0; i<PRODUCTS_ARRAY.length; i++) {
+                PRODUCT_DETAILS_BUTTONS_ARRAY[i].addEventListener("click", function(){
+                localStorage.setItem('page-detail-product', JSON.stringify(PRODUCTS_ARRAY[i]));
+                localStorage.setItem("qty_cartItems", JSON.stringify(PARSED_QTY_CART_ITEMS + 1));
+                // Update page
+                window.location.reload();
+            })
+        }
+    return '';
+}
+
 /* ---- Add to cart onclick ---- */
 function ManageCart() {
     const ADD_TO_CART_BUTTONS_ARRAY = document.querySelectorAll('.add-to-cart-button');
         for(let i = 0; i<PRODUCTS_ARRAY.length; i++) {
             ADD_TO_CART_BUTTONS_ARRAY[i].addEventListener("click", function(){
             AddToCart(PRODUCTS_ARRAY[i]);
+            localStorage.setItem('page-detail-product', JSON.stringify(PRODUCTS_ARRAY[i]));
         })
     }
     return '';
@@ -177,5 +213,6 @@ function AddToCart(productDetails) {
 
 // Excution
 Products();
+SetProductDetailsLocalStorage();
 OnloadPage();
 ManageCart();

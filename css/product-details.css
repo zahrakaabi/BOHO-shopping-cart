@@ -1,0 +1,40 @@
+.product-details-wrapper {
+    height: 100vh;
+}
+
+.product-details-container {
+    padding: 4rem 0;
+}
+
+.product-details-content {
+    margin-left: 4rem;
+}
+
+.product-details-content h1 {
+    color: #af9996;
+    font-size: 5rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.product-details-content p {
+    color: #8b8888;
+    font-size: 1.2rem;
+    margin-bottom: 0.7em;
+}
+
+.call-to-action-buttons button {
+    color: #fff;
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 1rem;
+    background-color: #ae7d74;
+    border: none;
+    margin-top: 2rem;
+}
+
+.call-to-action-buttons button:first-of-type {
+    border-right: 4px solid #fff;
+}
+
