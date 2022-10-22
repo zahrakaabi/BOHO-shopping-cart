@@ -15,6 +15,7 @@ let PARSED_ALL_PRODUCTS_ARRAY = JSON.parse(ALL_PRODUCTS_ARRAY);
 // save the number of added products to the bag
 // even after loading page 
 function OnloadPage() {
+    // shopping bag
     const CART_NUMBER_CONTAINER = document.getElementById('cart-number-container');
     let QUANTITY_CART_ITEMS = localStorage.getItem("qty_cartItems");
 
@@ -22,6 +23,16 @@ function OnloadPage() {
         CART_NUMBER_CONTAINER.classList.add("cart-icon");
         CART_NUMBER_CONTAINER.innerHTML = QUANTITY_CART_ITEMS;
     }
+
+    // favorites bag
+    let QUANTITY_FAVORITE_ITEMS = localStorage.getItem("favorites");
+    const FAVORITE_NUMBER_CONTAINER = document.getElementById('favorite-number-container');
+
+    if (QUANTITY_FAVORITE_ITEMS) {
+        FAVORITE_NUMBER_CONTAINER.classList.add("heart-icon");
+        FAVORITE_NUMBER_CONTAINER.innerHTML = QUANTITY_FAVORITE_ITEMS;
+    }
+
     return '';
 }
 

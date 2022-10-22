@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="./css/typography.css">
     <link rel="stylesheet" href="./css/landing-page.css">
     <link rel="stylesheet" href="./css/see-more-button.css">
+    <!--JS-->
+    <script src="./js/Blotter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Blotter/0.1.0/materials/liquidDistortMaterial.min.js"></script>
 </head>
 <body>
     <!--=======================header=========================--->
@@ -26,7 +29,10 @@
             </ul>
 
             <ul class="side-shopping-menu">
-                <li><img src="./assets/images/bx-heart.svg" alt="heart" /></li>
+                <li>
+                    <img src="./assets/images/bx-heart.svg" alt="heart" />
+                    <span id="favorite-number-container" class="flex justify-center items-center"></span>
+                </li>
                 <li><img src="./assets/images/bx-user.svg" alt="user" /></li>
                 <li>
                     <a href="./html/shopping-cart.html">
@@ -54,7 +60,7 @@
     <div class="container banner bg-section flex flex-column justify-center items-center">
         <img class="w-max" src="./assets/images/banner-section/banner2.jpg" alt="flowers" />
         <div class="banner__content text-center pos-center">
-            <h1>BOHO</h1>
+            <h1 id="hero-title"></h1>
             <h2>studio</h2>
         </div>
     </div>
@@ -166,6 +172,56 @@
     </footer>
 
     <!--========================Scripts========================-->
-    <script src="./js/index.js"></script>
+    <script>
+        var text = new Blotter.Text("BOHO", {
+          family : "serif",
+          size : 300,
+          fill: "#cfc5bb",
+        });
+  
+        var material = new Blotter.LiquidDistortMaterial();
+        material.uniforms.uVolatility.value = 0.05;
+        material.uniforms.uSeed.value = 0;
+        material.uniforms.uSpeed.value = .4;
+  
+        var blotter = new Blotter(material, { 
+            texts : text 
+        });
+        var scope = blotter.forText(text);
+        scope.appendTo(document.getElementById('hero-title'));
+
+        // CHANGE BLOTTER TEXT BASED ON MOUSE POSITION
+        document.onmousemove = moveBlotter;
+        function moveBlotter(event) {
+            material.uniforms.uRotation.vale = (event.clientX * .1);
+        }
+
+        /* ---- Check cart after loading ---- */
+        // save the number of added products to the bag
+        // even after loading page 
+        function OnloadPage() {
+            // shopping bag
+            const CART_NUMBER_CONTAINER = document.getElementById('cart-number-container');
+            let QUANTITY_CART_ITEMS = localStorage.getItem("qty_cartItems");
+
+            if (QUANTITY_CART_ITEMS) {
+                CART_NUMBER_CONTAINER.classList.add("cart-icon");
+                CART_NUMBER_CONTAINER.innerHTML = QUANTITY_CART_ITEMS;
+            }
+
+            // favorites bag
+            let QUANTITY_FAVORITE_ITEMS = localStorage.getItem("favorites");
+            const FAVORITE_NUMBER_CONTAINER = document.getElementById('favorite-number-container');
+
+            if (QUANTITY_FAVORITE_ITEMS) {
+                FAVORITE_NUMBER_CONTAINER.classList.add("heart-icon");
+                FAVORITE_NUMBER_CONTAINER.innerHTML = QUANTITY_FAVORITE_ITEMS;
+            }
+            return '';
+        }
+
+        //Excution
+        OnloadPage();
+    </script>
 </body>
 </html>

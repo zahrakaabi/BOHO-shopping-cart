@@ -105,7 +105,7 @@ function Products() {
         products_list.innerHTML +=
             `<div class="single-product">
                 <button class="add-to-favorite">
-                    <img src="../assets/images/icons/white-heart.svg" alt="white-heart" />
+                    <img id="favorite-icon" src="../assets/images/icons/white-heart.svg" alt="white-heart" />
                 </button>
                 <img class="product-img" src=${product.image} alt=${product.name} />
                 <div class="product-info flex justify-between">
@@ -149,7 +149,6 @@ function AddToFavorite() {
             const FAVORITES_ARRAY = localStorage.getItem('favorites-array');
             let PARSED_FAVORITES_ARRAY = JSON.parse(FAVORITES_ARRAY);
 
-            console.log('data', PARSED_FAVORITES_ARRAY);
             if (!PARSED_FAVORITES_ARRAY) {
                 PARSED_FAVORITES_ARRAY = [];
             }
@@ -158,7 +157,6 @@ function AddToFavorite() {
             
             // DELETE DUPLICATED FAVORITE ITEMS
             const UNIQUE_FAVORITES_ID = new Set();
-            console.log('new set', UNIQUE_FAVORITES_ID);
             const DELETE_DUPLICATED_FAVORITE_ITEMS = PARSED_FAVORITES_ARRAY.filter((favorite) => {
                 // use .has instead includes
                 const IS_DUPLICATED = UNIQUE_FAVORITES_ID.has(favorite.id);

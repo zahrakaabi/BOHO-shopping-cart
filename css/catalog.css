@@ -72,6 +72,10 @@
     background-color: var(--second-color);
 }
 
+.colored-heart-icon {
+    filter: invert(0) !important;
+}
+
 .add-to-favorite img {
     width: 25px;
     height: 25px;

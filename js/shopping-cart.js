@@ -132,6 +132,19 @@ function CartNumber() {
     return '';
 }
 
+/* --------- On Load Page Favorites -------- */
+function OnloadPage() {
+    // favorites bag
+    const QUANTITY_FAVORITE_ITEMS = localStorage.getItem("favorites");
+    const FAVORITE_NUMBER_CONTAINER = document.getElementById('favorite-number-container');
+
+    if (QUANTITY_FAVORITE_ITEMS) {
+        FAVORITE_NUMBER_CONTAINER.classList.add("heart-icon");
+        FAVORITE_NUMBER_CONTAINER.innerHTML = QUANTITY_FAVORITE_ITEMS;
+    }
+    return '';
+}
+
 // Excution
 ShoppingCartItems();
 DeleteItem();
@@ -139,3 +152,4 @@ DecreaseItemsQuantity();
 IncreaseItemsQuantity();
 CartNumber();
 Subtotal();
+OnloadPage();
