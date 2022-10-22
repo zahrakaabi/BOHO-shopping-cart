@@ -143,25 +143,34 @@ function OnloadPageFavorites() {
 /* ---- Add to favorites ---- */
 function AddToFavorite() {
     const ADD_TO_FAVORITE_BUTTONS = document.querySelectorAll('.add-to-favorite');
-    const FAVORITES_ARRAY = localStorage.getItem('favorites-array');
-    let PARSED_FAVORITES_ARRAY = JSON.parse(FAVORITES_ARRAY);
     
     for (let i = 0; i<PRODUCTS_ARRAY.length; i++) {
         ADD_TO_FAVORITE_BUTTONS[i].addEventListener("click", function() {
-            
+            const FAVORITES_ARRAY = localStorage.getItem('favorites-array');
+            let PARSED_FAVORITES_ARRAY = JSON.parse(FAVORITES_ARRAY);
+
+            console.log('data', PARSED_FAVORITES_ARRAY);
             if (!PARSED_FAVORITES_ARRAY) {
                 PARSED_FAVORITES_ARRAY = [];
             }
 
-            // Check if the product is laready exist in the array
-            if (PARSED_FAVORITES_ARRAY.includes(PRODUCTS_ARRAY[i])) {
-                alert("Hello Dear USER\n This product is already added to your favorite list <3");
-            }
-            
             PARSED_FAVORITES_ARRAY.push(PRODUCTS_ARRAY[i]);
-
+            
             // DELETE DUPLICATED FAVORITE ITEMS
-            let DELETE_DUPLICATED_FAVORITE_ITEMS = [...new Set(PARSED_FAVORITES_ARRAY)];
+            const UNIQUE_FAVORITES_ID = new Set();
+            console.log('new set', UNIQUE_FAVORITES_ID);
+            const DELETE_DUPLICATED_FAVORITE_ITEMS = PARSED_FAVORITES_ARRAY.filter((favorite) => {
+                // use .has instead includes
+                const IS_DUPLICATED = UNIQUE_FAVORITES_ID.has(favorite.id);
+                // use .add instead .push
+                UNIQUE_FAVORITES_ID.add(favorite.id);
+                if (!IS_DUPLICATED) {
+                  return true;
+                } else {
+                    alert("Hello Dear USER\n This product is already added to your favorite list <3");
+                }
+                return false;
+            });
 
             // save favorite items into localStorage
             const STRINGIFIED_DELETE_DUPLICATED_FAVORITE_ITEMS = JSON.stringify(DELETE_DUPLICATED_FAVORITE_ITEMS);
