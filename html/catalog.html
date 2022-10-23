@@ -30,6 +30,18 @@
                     <img src="../assets/images/bx-heart.svg" alt="heart" />
                     <span id="favorite-number-container" class="flex justify-center items-center"></span>
                 </li>
+                <li>
+                    <img id="search-icon" src="../assets/images/bx-search.svg" alt="heart" />
+                    <div id="search-box" class="search-box flex items-center">
+                        <input 
+                            id="search-input" 
+                            type="text" 
+                            placeholder="Search" 
+                            onkeyup="onKeyUpSearch()"
+                        /> 
+                    </div>
+                    <div id="hide-search"></div>
+                </li>
                 <li><img src="../assets/images/bx-user.svg" alt="user" /></li>
                 <li>
                     <a href="../html/shopping-cart.html">

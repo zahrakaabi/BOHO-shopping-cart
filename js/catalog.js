@@ -92,10 +92,31 @@ var favorites_number = 0;
 var cart_number = 0;
 const SHOPPING_CART = [];
 const CART_NUMBER_CONTAINER = document.getElementById("cart-number-container");
+var searchInput;
 
 /*-----------------------------------------------------------------
                             Functions
 -----------------------------------------------------------------*/
+/* ---- SEARCH ITEM ----- */
+function Search() {
+    const SEARCH_ICON = document.getElementById('search-icon');
+    const SEARCH_BOX = document.getElementById('search-box');
+    const HIDE_SEARCH = document.getElementById('hide-search');
+
+    // SHOW SEARCH BOX
+    SEARCH_ICON.addEventListener("click", function() {
+        SEARCH_BOX.style.top = "0";
+        HIDE_SEARCH.style.top = "0";
+    })
+
+    // HIDE SEARCH BOX
+    HIDE_SEARCH.addEventListener("click", function() {
+        SEARCH_BOX.style.top = "-100%";
+        HIDE_SEARCH.style.top = "-100%";
+    })
+    return '';
+}
+
 /* ---- Display all products ----- */
 function Products() {
     let products_list = document.getElementById('products');
@@ -124,6 +145,25 @@ function Products() {
     ).join('');
 
     return items;
+}
+
+/* ---- SAVE SEARCH INPUT ---- */
+function onKeyUpSearch() {
+    // get all the products
+    let products = document.querySelectorAll('.single-product')
+    // get SEARCH INPUT 
+    const SEARCH_BOX = document.getElementById('search-input');
+    searchInput = SEARCH_BOX.value.toLowerCase();
+
+    // Loop through the products
+    for (let i = 0; i < products.length; i++) {
+        if (products[i].innerText.toLowerCase().includes(searchInput)) {
+            products[i].classList.remove("remove-element");
+        } else {
+            products[i].classList.add("remove-element");
+        }
+    }
+    return '';
 }
 
 /* ---- check favorite bag after loading ---- */
@@ -261,6 +301,7 @@ function AddToCart(productDetails) {
 }
 
 // Excution
+Search();
 Products();
 SetProductDetailsLocalStorage();
 OnloadPage();
